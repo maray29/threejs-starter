@@ -414,6 +414,13 @@ class App {
       (object) => {
         this.processObject.call(this, object);
       },
+      (progress) => {
+        console.log(
+          "Loading progress:",
+          (progress.loaded / progress.total) * 100,
+          "%"
+        );
+      },
       function (error) {
         console.log("An error happened!");
         console.log("Error:", error);
